@@ -5,7 +5,7 @@ function Home (props) {
 	return (
         <div>
         <div className="container-fluid text-center" style={styles.bg1}>
-            Pig Latin
+            Izzle
         </div>
             <div className="container-fluid" style={styles.bg2}>
             
@@ -16,7 +16,7 @@ function Home (props) {
               className='form-control' 
               style={styles.textarea}
               placeholder="English goes in here..."
-              onChange={props.onPigLatin}
+              onChange={props.onIzzle}
               value={props.text}>
               </textarea>
               </div>

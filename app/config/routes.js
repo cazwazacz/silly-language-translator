@@ -8,12 +8,14 @@ var Main = require('../components/Main');
 var Home = require('../components/Home');
 var PigLatin = require("../components/PigLatin");
 var PigLatinContainer = require('../containers/PigLatinContainer');
+var IzzleContainer = require('../containers/IzzleContainer');
 
 var routes = (
   <Router history={hashHistory}>
-    <Route path='/' component={Main}>
+    <Route path='/' component={Main}>``
       <IndexRoute component={Home} />
       <Route path='piglatin' component={PigLatinContainer} />
+      <Route path='izzle' component={IzzleContainer} />
     </Route>
   </Router>
 );

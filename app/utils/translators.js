@@ -8,8 +8,11 @@ translators = {
   	for (let i = 0; i < splitString.length; i++) {
   	  var word = splitString[i];
   	  var firstLetter = splitString[i][0];
+      if (firstLetter && firstLetter == firstLetter.toUpperCase()) {
+        var capital = true;
+      }
   	  if (punctuation.test(word)) {
-  	    var punc = (word.match(punctuation))[0];
+  	    var punc = (word.match(punctuation)).join('');
   	    word = word.replace(punctuation, "");
   	  }
   	  if (vowels.test(firstLetter)) {
@@ -21,7 +24,12 @@ translators = {
   	        splitString[i] = word + 'way';
   	      }
   	    }
+        if (capital) {
+          splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].slice(1);
+          capital = false;
+        }
   	  } else {
+        word = word.toLowerCase();
   	    for (let j = 0; j < word.length; j++) {
   	      if (vowels.test(word[j])) {
   	        if (punc) {
@@ -33,6 +41,10 @@ translators = {
   	        break;
   	      }
   	    }
+        if (capital) {
+          splitString[i] = splitString[i].charAt(0).toUpperCase() + splitString[i].slice(1);
+          capital = false;
+        }
   	  }
   	  
   	}
@@ -40,8 +52,15 @@ translators = {
 
   },
 
-  otherLanguage: function (string) {
-  	console.log(string + " in other lanauge")
+  izzle: function (string) {
+    var splitString = string.split(" ");
+
+    for (let i = 0; i < splitString.length; i++) {
+      if (splitString[i] !== '') {
+        splitString[i] = splitString[i] + 'izzle';
+      }
+    }
+    return splitString.join(' ');
   } 
 
 }

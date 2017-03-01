@@ -1,7 +1,5 @@
-var PigLatin = require('../components/PigLatin');
+var Izzle = require('../components/Izzle');
 var React = require('react');
-var marked = require('marked');
-var Parser = require('html-react-parser');
 var translators = require('../utils/translators')
 
 var PigLatinContainer = React.createClass({
@@ -10,18 +8,18 @@ var PigLatinContainer = React.createClass({
       	markdown: ''
       }
 	},
-	handlePigLatin: function (e) {
+	handleIzzle: function (e) {
       this.setState({
-      	pigLatin: translators.pigLatin(e.target.value)
+      	pigLatin: translators.izzle(e.target.value)
       })
 	},
 	render: function() {
 		return (
 			<div>
 				<div>
-					<PigLatin 
+					<Izzle 
 					translated={this.state.pigLatin}
-					onPigLatin={this.handlePigLatin}/>
+					onIzzle={this.handleIzzle}/>
 				</div>			
 			</div>
 

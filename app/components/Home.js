@@ -17,16 +17,15 @@ var Home = React.createClass({
 						<button className="btn btn-lg">Pig Latin</button>
 					</Link>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+						A secret language formed from English by transferring the initial consonant or consonant cluster of each word to the end of the word and adding a vocalic syllable.
 					</p>
 					</div>
 					<div className="col-sm-4">
-					<Link>
-						<button className="btn btn-lg">Other Lang 1</button>
+					<Link to="izzle">
+						<button className="btn btn-lg">Izzle</button>
 					</Link>
 					<p>
-						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-					</p>
+						Insert "-izzle" after a word's last pre-vowel consonant while discarding the remaining letters.					</p>
 					</div>
 					<div className="col-sm-4">
 					<Link>
