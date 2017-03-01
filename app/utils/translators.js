@@ -53,11 +53,19 @@ translators = {
   },
 
   izzle: function (string) {
+    const vowels = new RegExp(/^[aeiouy]$/i);
     var splitString = string.split(" ");
 
     for (let i = 0; i < splitString.length; i++) {
       if (splitString[i] !== '') {
-        splitString[i] = splitString[i] + 'izzle';
+        var splitWord = splitString[i].split('').reverse();
+          for (let j = 0; j < splitWord.length; j++) {
+            if (vowels.test(splitWord[j]) && !(vowels.test(splitWord[j + 1]))) {
+              console.log(splitWord[j] + splitWord[j+1]);
+              splitString[i] = (splitWord.slice(j + 1).reverse()).join("") + 'izzle';
+            }
+            break;
+          }
       }
     }
     return splitString.join(' ');
